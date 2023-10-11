@@ -1,5 +1,323 @@
-$color: red;
+// 5 scss variables (2 marks), at least 5 nestings (2 marks), and at least 2 mixins (2 marks).
 
-body{
-    background: $color;
+// Variables
+$BK: #111111;
+$GY: #324360;
+$MGY: #989898;
+$BL: #35c4ce;
+$ftp: 15px;
+$font: 'Josefin Sans', sans-serif;
+$fx: flex;
+
+// Mixins
+@mixin txtstyle($size: $fyp) {
+    margin-top: 25px;
+    margin-bottom: 20px;
+    font-family: $font;
+    font-weight: 400;
+    line-height: 1.3em;
+    word-wrap: break-word;
+    color: $BK;
+    font-size: $ftp;
+}
+
+
+
+
+
+
+body {
+    font-family: Quando;
+    font-size: $ftp;
+    color: #787878;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+p {
+    margin-bottom: 25px;
+    line-height: 1.6em;
+}
+
+a {
+    font-weight: 400;
+    text-decoration: none;
+    color: $BK;
+    transition: .20s;
+
+    &:hover {
+        color: #999999;
+    }
+}
+
+h1 {
+    @include txtstyle($size: 37px)
+}
+
+h2 {
+    @include txtstyle($size: 31px)
+}
+
+h3 {
+    @include txtstyle($size: 26px)
+}
+
+h4 {
+    @include txtstyle($size: 21px)
+}
+
+h5 {
+    @include txtstyle($size: 18px)
+}
+
+h6 {
+    @include txtstyle($size: $ftp)
+}
+
+
+.container {
+    width: 94%;
+    margin: 0 auto;
+}
+
+
+/* header and main nav */
+header {
+    font-family: $font;
+
+    nav {
+        ul {
+            display: none;
+        }
+    }
+}
+
+.top-logo {
+    width: 200px;
+    margin: 20px auto 40px;
+}
+
+/* posts */
+article {
+    margin-bottom: 50px;
+    display: $fx;
+    flex-wrap: wrap;
+}
+
+.image-part {
+    margin-bottom: 10px;
+}
+
+.post-title {
+    margin-top: 0;
+
+    a {
+        color: $GY;
+        text-transform: uppercase;
+        font-size: 26px;
+        font-weight: 900;
+        margin-top: $ftp;
+        margin-bottom: $ftp;
+        line-height: 1.3em;
+        transition: all .3s ease;
+
+        &:hover {
+            color: $BL;
+        }
+    }
+}
+
+/* footer */
+#footer {
+    padding: 30px 0;
+    text-align: center;
+    background: #eaf2ff;
+    color: $MGY;
+
+    a {
+        color: $MGY;
+
+        &:hover {
+            color: $BK;
+        }
+    }
+}
+
+.footer-logo {
+    width: 200px;
+    margin: 20px auto;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.footer-social-links {
+    padding: 20px 0;
+    line-height: 2em;
+
+    a {
+        margin: 0 10px;
+        font-size: 16px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+
+        span {
+            display: none;
+        }
+    }
+}
+
+
+#footer-copyright {
+    padding: 20px 0;
+    font-size: 12px;
+    color: $MGY;
+}
+
+
+@media only screen and (min-width: 650px) {
+    .container {
+        width: 90%;
+    }
+
+    header {
+        nav {
+            max-width: 1170px;
+            margin: 0 auto;
+            display: $fx;
+            justify-content: center;
+            align-items: center;
+            height: 60px;
+
+            ul {
+                display: $fx;
+            }
+
+            li {
+                margin: 0 $ftp;
+                position: relative;
+                line-height: 24px;
+            }
+
+            li.menu-item-has-children {
+                >a::after {
+                    margin-left: 7px;
+                    font-family: 'FontAwesome';
+                    font-size: 13px;
+                    color: $GY;
+                    content: '\f078';
+                }
+            }
+
+            a {
+                font-family: $font;
+                color: $GY;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                font-size: 12px;
+                font-weight: 900;
+
+                &:hover {
+                    color: $BL;
+                }
+            }
+        }
+    }
+
+
+    .current-menu-item {
+        a {
+            border-bottom: 2px solid $GY;
+        }
+    }
+
+    /* sub nav */
+    header {
+        nav {
+            ul {
+                ul {
+                    visibility: hidden;
+                    opacity: 0;
+                    display: block;
+                    position: absolute;
+                    z-index: 9999;
+                    left: 0;
+                    background: #f0f0f0;
+                    transition: all 0.2s ease-out;
+
+                    li {
+                        border-top: 1px solid #e9e9e9;
+                        margin: 0;
+                    }
+
+                    a {
+                        display: block;
+                        color: $BK;
+                        min-width: 175px;
+                        margin: 0;
+                        padding: 20px 10px;
+                        line-height: 1.4em;
+                        letter-spacing: 1px;
+                        transition: .35s;
+
+                        &:hover {
+                            background: #ffffff;
+                            color: #000;
+                        }
+                    }
+                }
+
+                li {
+                    &:hover {
+                        ul {
+                            visibility: visible;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* posts */
+    article {
+        display: $fx;
+    }
+
+    .image-part {
+        flex: 1;
+        overflow: hidden;
+        margin-bottom: 0;
+
+        img {
+            transition: transform 3.5s ease-in-out;
+
+            &:hover {
+                transform: scale(1.5, 1.5);
+            }
+        }
+    }
+
+    .content-part {
+        flex: 1;
+        padding-left: 50px;
+    }
+
+    /* footer */
+    .footer-social-links {
+        a {
+            margin: 0 28px;
+
+            span {
+                display: inline;
+                font-size: 11px;
+            }
+        }
+
+        i {
+            margin-right: 5px;
+        }
+    }
 }
