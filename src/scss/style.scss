@@ -7,7 +7,6 @@ $MGY: #989898;
 $BL: #35c4ce;
 $ftp: 15px;
 $font: 'Josefin Sans', sans-serif;
-$fx: flex;
 
 // Mixins
 @mixin txtstyle($size: $fyp) {
@@ -18,10 +17,13 @@ $fx: flex;
     line-height: 1.3em;
     word-wrap: break-word;
     color: $BK;
-    font-size: $ftp;
+    font-size: $size;
 }
 
-
+@mixin flex($W: nowrap) {
+    display: flex;
+    flex-wrap: $W;
+}
 
 
 
@@ -103,8 +105,7 @@ header {
 /* posts */
 article {
     margin-bottom: 50px;
-    display: $fx;
-    flex-wrap: wrap;
+    @include flex($W: wrap)
 }
 
 .image-part {
@@ -186,13 +187,13 @@ article {
         nav {
             max-width: 1170px;
             margin: 0 auto;
-            display: $fx;
+            @include flex;
             justify-content: center;
             align-items: center;
             height: 60px;
 
             ul {
-                display: $fx;
+                @include flex;
             }
 
             li {
@@ -283,7 +284,7 @@ article {
 
     /* posts */
     article {
-        display: $fx;
+            @include flex;
     }
 
     .image-part {

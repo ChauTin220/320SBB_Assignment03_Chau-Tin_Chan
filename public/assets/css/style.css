@@ -32,7 +32,7 @@ h1 {
   line-height: 1.3em;
   word-wrap: break-word;
   color: #111111;
-  font-size: 15px;
+  font-size: 37px;
 }
 
 h2 {
@@ -43,7 +43,7 @@ h2 {
   line-height: 1.3em;
   word-wrap: break-word;
   color: #111111;
-  font-size: 15px;
+  font-size: 31px;
 }
 
 h3 {
@@ -54,7 +54,7 @@ h3 {
   line-height: 1.3em;
   word-wrap: break-word;
   color: #111111;
-  font-size: 15px;
+  font-size: 26px;
 }
 
 h4 {
@@ -65,7 +65,7 @@ h4 {
   line-height: 1.3em;
   word-wrap: break-word;
   color: #111111;
-  font-size: 15px;
+  font-size: 21px;
 }
 
 h5 {
@@ -76,7 +76,7 @@ h5 {
   line-height: 1.3em;
   word-wrap: break-word;
   color: #111111;
-  font-size: 15px;
+  font-size: 18px;
 }
 
 h6 {
@@ -185,12 +185,14 @@ article {
     max-width: 1170px;
     margin: 0 auto;
     display: flex;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
     height: 60px;
   }
   header nav ul {
     display: flex;
+    flex-wrap: nowrap;
   }
   header nav li {
     margin: 0 15px;
@@ -254,6 +256,7 @@ article {
   /* posts */
   article {
     display: flex;
+    flex-wrap: nowrap;
   }
   .image-part {
     flex: 1;
