@@ -8,6 +8,7 @@ $BL: #35c4ce;
 $ftp: 15px;
 $font: 'Josefin Sans', sans-serif;
 
+
 // Mixins
 @mixin txtstyle($size: $fyp) {
     margin-top: 25px;
@@ -24,6 +25,13 @@ $font: 'Josefin Sans', sans-serif;
     display: flex;
     flex-wrap: $W;
 }
+
+@mixin upp($txtc: $GY, $txts: 26px) {
+    color: $txtc;
+    text-transform: uppercase;
+    font-size: $txts;
+}
+
 
 
 
@@ -116,9 +124,7 @@ article {
     margin-top: 0;
 
     a {
-        color: $GY;
-        text-transform: uppercase;
-        font-size: 26px;
+        @include upp;
         font-weight: 900;
         margin-top: $ftp;
         margin-bottom: $ftp;
@@ -160,9 +166,9 @@ article {
 
     a {
         margin: 0 10px;
-        font-size: 16px;
         letter-spacing: 1px;
-        text-transform: uppercase;
+        @include upp($txtc: $MGY, $txts: 16px);
+
 
         span {
             display: none;
@@ -214,11 +220,9 @@ article {
 
             a {
                 font-family: $font;
-                color: $GY;
                 letter-spacing: 1px;
-                text-transform: uppercase;
-                font-size: 12px;
                 font-weight: 900;
+                @include upp($txtc: $GY, $txts: 12px);
 
                 &:hover {
                     color: $BL;
@@ -284,7 +288,7 @@ article {
 
     /* posts */
     article {
-            @include flex;
+        @include flex;
     }
 
     .image-part {

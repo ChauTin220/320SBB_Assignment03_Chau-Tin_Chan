@@ -163,9 +163,10 @@ article {
 }
 .footer-social-links a {
   margin: 0 10px;
-  font-size: 16px;
   letter-spacing: 1px;
+  color: #989898;
   text-transform: uppercase;
+  font-size: 16px;
 }
 .footer-social-links a span {
   display: none;
@@ -208,11 +209,11 @@ article {
   }
   header nav a {
     font-family: "Josefin Sans", sans-serif;
-    color: #324360;
     letter-spacing: 1px;
+    font-weight: 900;
+    color: #324360;
     text-transform: uppercase;
     font-size: 12px;
-    font-weight: 900;
   }
   header nav a:hover {
     color: #35c4ce;
