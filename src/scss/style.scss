@@ -8,7 +8,6 @@ $BL: #35c4ce;
 $ftp: 15px;
 $font: 'Josefin Sans', sans-serif;
 
-
 // Mixins
 @mixin txtstyle($size: $fyp) {
     margin-top: 25px;
@@ -31,6 +30,7 @@ $font: 'Josefin Sans', sans-serif;
     text-transform: uppercase;
     font-size: $txts;
 }
+
 
 
 
