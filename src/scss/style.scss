@@ -9,7 +9,7 @@ $ftp: 15px;
 $font: 'Josefin Sans', sans-serif;
 
 // Mixins
-@mixin txtstyle($size: $fyp) {
+@mixin txtstyle($size) {
     margin-top: 25px;
     margin-bottom: 20px;
     font-family: $font;
@@ -20,12 +20,12 @@ $font: 'Josefin Sans', sans-serif;
     font-size: $size;
 }
 
-@mixin flex($W: nowrap) {
+@mixin flex($W) {
     display: flex;
     flex-wrap: $W;
 }
 
-@mixin upp($txtc: $GY, $txts: 26px) {
+@mixin upp($txtc, $txts) {
     color: $txtc;
     text-transform: uppercase;
     font-size: $txts;
@@ -64,27 +64,27 @@ a {
 }
 
 h1 {
-    @include txtstyle($size: 37px)
+    @include txtstyle(37px);
 }
 
 h2 {
-    @include txtstyle($size: 31px)
+    @include txtstyle(31px);
 }
 
 h3 {
-    @include txtstyle($size: 26px)
+    @include txtstyle(26px);
 }
 
 h4 {
-    @include txtstyle($size: 21px)
+    @include txtstyle(21px);
 }
 
 h5 {
-    @include txtstyle($size: 18px)
+    @include txtstyle(18px);
 }
 
 h6 {
-    @include txtstyle($size: $ftp)
+    @include txtstyle($ftp);
 }
 
 
@@ -113,7 +113,7 @@ header {
 /* posts */
 article {
     margin-bottom: 50px;
-    @include flex($W: wrap)
+    @include flex(wrap);
 }
 
 .image-part {
@@ -124,7 +124,7 @@ article {
     margin-top: 0;
 
     a {
-        @include upp;
+        @include upp($GY, 26px);
         font-weight: 900;
         margin-top: $ftp;
         margin-bottom: $ftp;
@@ -167,7 +167,7 @@ article {
     a {
         margin: 0 10px;
         letter-spacing: 1px;
-        @include upp($txtc: $MGY, $txts: 16px);
+        @include upp($MGY, 16px);
 
 
         span {
@@ -193,13 +193,13 @@ article {
         nav {
             max-width: 1170px;
             margin: 0 auto;
-            @include flex;
+            @include flex(nowrap);
             justify-content: center;
             align-items: center;
             height: 60px;
 
             ul {
-                @include flex;
+                @include flex(nowrap);
             }
 
             li {
@@ -222,7 +222,7 @@ article {
                 font-family: $font;
                 letter-spacing: 1px;
                 font-weight: 900;
-                @include upp($txtc: $GY, $txts: 12px);
+                @include upp($GY, 12px);
 
                 &:hover {
                     color: $BL;
@@ -288,7 +288,7 @@ article {
 
     /* posts */
     article {
-        @include flex;
+        @include flex(nowrap);
     }
 
     .image-part {
