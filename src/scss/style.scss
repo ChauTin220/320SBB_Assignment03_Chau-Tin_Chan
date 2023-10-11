@@ -6,12 +6,13 @@ $GY: #324360;
 $MGY: #989898;
 $BL: #35c4ce;
 $ftp: 15px;
+$ttp: 20px;
 $font: 'Josefin Sans', sans-serif;
 
 // Mixins
 @mixin txtstyle($size) {
     margin-top: 25px;
-    margin-bottom: 20px;
+    margin-bottom: $ttp;
     font-family: $font;
     font-weight: 400;
     line-height: 1.3em;
@@ -107,7 +108,7 @@ header {
 
 .top-logo {
     width: 200px;
-    margin: 20px auto 40px;
+    margin: $ttp auto 40px;
 }
 
 /* posts */
@@ -155,13 +156,13 @@ article {
 
 .footer-logo {
     width: 200px;
-    margin: 20px auto;
+    margin: $ttp auto;
     text-align: center;
     vertical-align: middle;
 }
 
 .footer-social-links {
-    padding: 20px 0;
+    padding: $ttp 0;
     line-height: 2em;
 
     a {
@@ -178,7 +179,7 @@ article {
 
 
 #footer-copyright {
-    padding: 20px 0;
+    padding: $ttp 0;
     font-size: 12px;
     color: $MGY;
 }
@@ -262,7 +263,7 @@ article {
                         color: $BK;
                         min-width: 175px;
                         margin: 0;
-                        padding: 20px 10px;
+                        padding: $ttp 10px;
                         line-height: 1.4em;
                         letter-spacing: 1px;
                         transition: .35s;
